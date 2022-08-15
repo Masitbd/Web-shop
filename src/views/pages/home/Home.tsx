@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import productService from '../../../services/Product.service';
 import DSlider from '../../components/DSlider';
 import ProductArray from '../../components/home/ProductArray';
 
 const Home = () => {
+  const [products, setProducts] = useState<[] | any[]>();
+
+  useEffect(() => {
+    productService
+      .getAllProduct()
+      .then((data) => setProducts(data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div>
       <main>
@@ -10,7 +19,7 @@ const Home = () => {
           <DSlider />
         </div>
         <div>
-          <ProductArray />
+          <ProductArray products={products} />
         </div>
       </main>
     </div>

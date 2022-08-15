@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductCard from '../common/ProductCard';
 
-const ProductArray = () => {
+const ProductArray = ({ products }: { products: any[] }) => {
   return (
     <div className="grid-cols-4">
-      {[1, 2, 3, 4, 5].map((item) => {
-        return <ProductCard />;
+      {products.map((product) => {
+        return <ProductCard product={product} />;
       })}
     </div>
   );
