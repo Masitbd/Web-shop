@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductCard = ({ product }: { product: any }) => {
+const ProductCard = ({ product }: { product: IProduct }) => {
   return (
     <div>
       <div>

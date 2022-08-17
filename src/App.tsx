@@ -1,12 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import TheLayout from './views/pages/TheLayout';
 
 function App() {
   //const [state, setState] = useState()
   return (
-    <div>
+    <BrowserRouter>
       <TheLayout />
-    </div>
+    </BrowserRouter>
   );
 }
 
